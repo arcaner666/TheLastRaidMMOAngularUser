@@ -8,7 +8,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 
 export class PublicNavigationComponent implements OnInit {
 
-  public innerWidth: any;
+  innerWidth: any;
   isSidenavActive: boolean = false;
   onMobile: boolean = false;
 
@@ -19,7 +19,7 @@ export class PublicNavigationComponent implements OnInit {
   }
 
   OnMobile() {
-    if (this.innerWidth <= 730) {
+    if (this.innerWidth <= 768) {
       this.onMobile = true;
     }
     else {
@@ -29,7 +29,7 @@ export class PublicNavigationComponent implements OnInit {
 
   // Uygulamanın açık olduğu sekmenin boyutu her değiştiğinde bize ekran genişliğini pixel olarak döndürür.
   @HostListener('window:resize', ['$event'])
-  OnResize(event: any) {
+  OnResize() {
     this.innerWidth = window.innerWidth;
     this.OnMobile();
   }

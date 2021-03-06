@@ -1,24 +1,33 @@
 <mat-sidenav-container>
   <mat-sidenav mode="push" [(opened)]="isSidenavActive">
-    Sidenav
+    <mat-nav-list>
+      <mat-list-item (click)="isSidenavActive = false"><a [routerLink]="['']">Home</a></mat-list-item>
+      <mat-list-item (click)="isSidenavActive = false"><a [routerLink]="['about']">About</a></mat-list-item>
+      <mat-list-item (click)="isSidenavActive = false"><a [routerLink]="['news']">News</a></mat-list-item>
+      <mat-list-item (click)="isSidenavActive = false"><a [routerLink]="['screenshots']">Screenshots</a></mat-list-item>
+      <mat-list-item (click)="isSidenavActive = false"><a [routerLink]="['rules']">Rules</a></mat-list-item>
+      <mat-list-item (click)="isSidenavActive = false"><a [routerLink]="['contact']">Contact</a></mat-list-item>
+    </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary" *ngIf="!onMobile" class="navbar">
+    <mat-toolbar *ngIf="!onMobile" class="navbar">
       <div>
-        <span>The Last Raid MMO</span>
+        <a href="">The Last Raid MMO</a>
       </div>
       <div>
-        <span>Home</span>
-        <span>About</span>
-        <span>News</span>
-        <span>Rules</span>
-        <span>Screenshots</span>
-        <span>Contact</span>
+        <nav mat-tab-nav-bar>
+          <a mat-tab-link [routerLink]="['']">Home</a>
+          <a mat-tab-link [routerLink]="['about']">About</a>
+          <a mat-tab-link [routerLink]="['news']">News</a>
+          <a mat-tab-link [routerLink]="['screenshots']">Screenshots</a>
+          <a mat-tab-link [routerLink]="['rules']">Rules</a>
+          <a mat-tab-link [routerLink]="['contact']">Contact</a>
+        </nav>
       </div>
     </mat-toolbar>
-    <mat-toolbar color="primary" *ngIf="onMobile" class="navbar">
+    <mat-toolbar *ngIf="onMobile" class="navbar">
       <div>
-        <button mat-icon-button (click)="isSidenavActive = !isSidenavActive">
+        <button mat-icon-button (click)="isSidenavActive = true">
           <mat-icon>menu</mat-icon>
         </button>
       </div>
