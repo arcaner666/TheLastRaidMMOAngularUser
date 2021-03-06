@@ -16,14 +16,14 @@
         <span>Contact</span>
       </div>
     </mat-toolbar>
-    <mat-toolbar color="primary" *ngIf="onMobile">
-      <div>
-        <span>The Last Raid MMO</span>
-      </div>
+    <mat-toolbar color="primary" *ngIf="onMobile" class="navbar">
       <div>
         <button mat-icon-button (click)="isSidenavActive = !isSidenavActive">
           <mat-icon>menu</mat-icon>
         </button>
+      </div>
+      <div>
+        <span>The Last Raid MMO</span>
       </div>
     </mat-toolbar>
     <router-outlet></router-outlet>
