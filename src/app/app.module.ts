@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http'
+import { FormsModule } from '@angular/forms';
 
 import { PublicAboutComponent } from './components/public-about/public-about.component';
 import { PublicContactComponent } from './components/public-contact/public-contact.component';
@@ -27,7 +28,6 @@ import { UserResearchesComponent } from './components/user-researches/user-resea
 import { UserWorldComponent } from './components/user-world/user-world.component';
 
 import { MaterialModule } from './modules/material/material.module';
-import { LayoutModule } from '@angular/cdk/layout';
 
 @NgModule({
   declarations: [
@@ -57,7 +57,7 @@ import { LayoutModule } from '@angular/cdk/layout';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    LayoutModule,
+    FormsModule,
     MaterialModule
   ],
   providers: [],
