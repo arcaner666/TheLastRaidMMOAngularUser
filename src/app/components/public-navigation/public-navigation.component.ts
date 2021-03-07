@@ -10,7 +10,7 @@ export class PublicNavigationComponent implements OnInit {
 
   innerWidth: any;
   isSidenavActive: boolean = false;
-  onMobile: boolean = false;
+  isSmallerScreen: boolean = false;
 
   constructor() { }
 
@@ -18,12 +18,12 @@ export class PublicNavigationComponent implements OnInit {
     this.innerWidth = window.innerWidth;
   }
 
-  OnMobile() {
+  IsSmallerScreen() {
     if (this.innerWidth <= 768) {
-      this.onMobile = true;
+      this.isSmallerScreen = true;
     }
     else {
-      this.onMobile = false;
+      this.isSmallerScreen = false;
     }
   }
 
@@ -31,7 +31,7 @@ export class PublicNavigationComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
   OnResize() {
     this.innerWidth = window.innerWidth;
-    this.OnMobile();
+    this.IsSmallerScreen();
   }
 
 }

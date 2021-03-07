@@ -1,4 +1,5 @@
 <mat-sidenav-container>
+  <!-- Sadece Mobilde Görünecek Sidenav -->
   <mat-sidenav mode="push" [(opened)]="isSidenavActive">
     <mat-nav-list>
       <mat-list-item (click)="isSidenavActive = false"><a [routerLink]="['']">Home</a></mat-list-item>
@@ -7,10 +8,14 @@
       <mat-list-item (click)="isSidenavActive = false"><a [routerLink]="['screenshots']">Screenshots</a></mat-list-item>
       <mat-list-item (click)="isSidenavActive = false"><a [routerLink]="['rules']">Rules</a></mat-list-item>
       <mat-list-item (click)="isSidenavActive = false"><a [routerLink]="['contact']">Contact</a></mat-list-item>
+      <mat-list-item></mat-list-item>
+      <mat-list-item (click)="isSidenavActive = false"><a [routerLink]="['register']">Register</a></mat-list-item>
+      <mat-list-item (click)="isSidenavActive = false"><a [routerLink]="['login']">Login</a></mat-list-item>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar *ngIf="!onMobile" class="navbar">
+    <!-- Bilgisayarda Görünecek Navbar -->
+    <mat-toolbar color="primary" *ngIf="!isSmallerScreen" class="navbar">
       <div>
         <a href="">The Last Raid MMO</a>
       </div>
@@ -22,10 +27,13 @@
           <a mat-tab-link [routerLink]="['screenshots']">Screenshots</a>
           <a mat-tab-link [routerLink]="['rules']">Rules</a>
           <a mat-tab-link [routerLink]="['contact']">Contact</a>
+          <a mat-tab-link [routerLink]="['register']">Register</a>
+          <a mat-tab-link [routerLink]="['login']">Login</a>
         </nav>
       </div>
     </mat-toolbar>
-    <mat-toolbar *ngIf="onMobile" class="navbar">
+    <!-- Mobilde Görünecek Navbar -->
+    <mat-toolbar color="primary" *ngIf="isSmallerScreen" class="navbar">
       <div>
         <button mat-icon-button (click)="isSidenavActive = true">
           <mat-icon>menu</mat-icon>
