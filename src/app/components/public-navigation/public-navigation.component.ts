@@ -18,7 +18,7 @@ export class PublicNavigationComponent implements OnInit {
     this.innerWidth = window.innerWidth;
   }
 
-  IsSmallerScreen() {
+  CheckScreen() {
     if (this.innerWidth <= 768) {
       this.isSmallerScreen = true;
     }
@@ -31,7 +31,7 @@ export class PublicNavigationComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
   OnResize() {
     this.innerWidth = window.innerWidth;
-    this.IsSmallerScreen();
+    this.CheckScreen();
   }
 
 }

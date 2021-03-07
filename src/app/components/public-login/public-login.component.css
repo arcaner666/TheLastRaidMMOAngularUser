@@ -1,0 +1,18 @@
+.mat-card {
+    margin: auto;
+    margin-top: 20%;
+    width: 40%;
+    background-color: rgba(12, 206, 141, 0.616);
+}
+
+.mat-card-header {
+
+}
+
+.mat-card-title {
+
+}
+
+.mat-form-field {
+    width: 100%;
+}
