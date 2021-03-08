@@ -1,20 +1,23 @@
 <mat-card>
-  <mat-card-header>
-    <mat-card-title>Login</mat-card-title>
-  </mat-card-header>
-  <mat-card-content>
-    <mat-form-field floatLabel="auto" appearance="outline">
-      <mat-label>User Name</mat-label>
-      <input matInput type="text" required>
-      <mat-hint align="end">Minimum 4 characters</mat-hint>
-    </mat-form-field>
-    <mat-form-field floatLabel="auto" appearance="outline">
-      <mat-label>Password</mat-label>
-      <input matInput type="password" required>
-      <mat-hint align="end">Minimum 6 characters</mat-hint>
-    </mat-form-field>
-  </mat-card-content>
-  <mat-card-actions>
-    <button color="accent" mat-raised-button type="submit">Login</button>
-  </mat-card-actions>
+  <form #LoginForm="ngForm" (ngSubmit)="Login()">
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field floatLabel="auto" appearance="outline">
+        <mat-label>User Name</mat-label>
+        <input matInput type="text" id="username" name="username" #username="ngModel" [(ngModel)]="player.UserName"
+          (keyup)="Reset()" required>
+        <mat-hint align="end">{{result.info}}</mat-hint>
+      </mat-form-field>
+      <mat-form-field floatLabel="auto" appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" id="password" name="password" #password="ngModel" [(ngModel)]="player.Password_"
+          (keyup)="Reset()" required>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button color="accent" mat-raised-button type="submit" [disabled]="LoginForm.invalid">Login</button>
+    </mat-card-actions>
+  </form>
 </mat-card>

@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Players } from './../models/Players';
-import { SessionRecords } from './../models/SessionRecords';
+import { Player } from '../models/Player';
+import { SessionRecord } from '../models/SessionRecord';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  public apiUrl = "https://localhost:44327/api/";
+  public apiUrl = "https://localhost:44342/api/";
   public isLoggedIn: boolean = this.AuthControl();
 
   constructor(
@@ -32,16 +32,16 @@ export class AuthService {
     }
   }
 
-  Login(player: Players) {
+  Login(player: Player) {
     return this.http.post(this.apiUrl + "login", player);
   }
 
-  AddSessionRecord(sessionRecord: SessionRecords) {
+  AddSessionRecord(sessionRecord: SessionRecord) {
     return this.http.post(this.apiUrl + "addsessionrecord", sessionRecord);
   }
 
-  UpdateSessionRecord(sessionRecord: SessionRecords) {
-    return this.http.put(this.apiUrl + "updatesessionrecord/" + sessionRecord.ID, sessionRecord);
+  UpdateSessionRecord(sessionRecord: SessionRecord) {
+    return this.http.put(this.apiUrl + "updatesessionrecord/" + sessionRecord.SessionRecordID, sessionRecord);
   }
 
   GetSessionRecord(sessionId: number) {
@@ -52,7 +52,7 @@ export class AuthService {
     return this.http.get(this.apiUrl + "checkusername/" + username);
   }
 
-  Register(player: Players) {
+  Register(player: Player) {
     return this.http.post(this.apiUrl + "register", player);
   }
 

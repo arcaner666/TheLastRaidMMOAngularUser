@@ -1,15 +1,72 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from './../../services/auth.service';
+import { Result } from 'src/app/models/Result';
+import { Player } from 'src/app/models/Player';
+import { SessionRecord } from './../../models/SessionRecord';
 
 @Component({
   selector: 'app-public-login',
   templateUrl: './public-login.component.html',
   styleUrls: ['./public-login.component.css']
 })
-export class PublicLoginComponent implements OnInit {
+export class PublicLoginComponent implements OnInit, OnDestroy {
 
-  constructor() { }
+  player: Player = new Player();
+  sessionRecord: SessionRecord = new SessionRecord();
+  result: Result = new Result();
+
+  sub1: any;
+  sub2: any;
+
+  constructor(
+    public auth: AuthService,
+    public router: Router
+  ) { }
 
   ngOnInit() {
   }
 
+  ngOnDestroy(): void {
+    if (this.sub1) {
+      this.sub1.unsubscribe();
+    }
+    if (this.sub2) {
+      this.sub2.unsubscribe();
+    }
+  }
+
+  Login() {
+    this.result = new Result();
+    var date: Date = new Date();
+    this.sub1 = this.auth.Login(this.player).subscribe((a: any) => {
+      if (a != null) {
+        console.log(a);
+        localStorage.setItem("token", this.auth.GenerateToken(64));
+        this.sessionRecord.PlayerID = a.PlayerID;
+        this.sessionRecord.LoginTime = date.getTime().toString();
+        this.sessionRecord.LogoutTime = "";
+        this.sessionRecord.LoginData = "";
+        this.sub2 = this.auth.AddSessionRecord(this.sessionRecord).subscribe((b: any) => {
+          console.log(b);
+          localStorage.setItem("sessionId", b.SessionRecordID.toString());
+          this.router.navigate(['overview']);
+        });
+      }
+      else {
+        this.result.isDone = false;
+        this.result.info = "Wrong username or password.";
+        console.log(this.result.info);
+        this.player = new Player();
+      }
+    }, error => {
+      this.result.isDone = false;
+      this.result.info = "Error: " + error;
+      console.log(this.result.info);
+    });
+  }
+
+  Reset() {
+    this.result = new Result();
+  }
 }

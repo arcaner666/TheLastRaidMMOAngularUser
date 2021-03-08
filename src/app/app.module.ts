@@ -1,11 +1,13 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
+
+import { AuthService } from './services/auth.service';
+import { AuthGuard } from './services/auth.guard';
 
 import { PublicAboutComponent } from './components/public-about/public-about.component';
 import { PublicContactComponent } from './components/public-contact/public-contact.component';
@@ -60,7 +62,10 @@ import { MaterialModule } from './modules/material/material.module';
     FormsModule,
     MaterialModule
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    AuthService
+  ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
