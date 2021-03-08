@@ -1,4 +1,4 @@
-<mat-sidenav-container>
+<mat-sidenav-container *ngIf="!this.auth.isLoggedIn">
   <!-- Sadece Mobilde Görünecek Sidenav -->
   <mat-sidenav mode="push" [(opened)]="isSidenavActive">
     <mat-nav-list>

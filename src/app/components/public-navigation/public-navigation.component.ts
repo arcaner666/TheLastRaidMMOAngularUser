@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { AuthService } from './../../services/auth.service';
 
 @Component({
   selector: 'app-public-navigation',
@@ -12,7 +13,9 @@ export class PublicNavigationComponent implements OnInit {
   isSidenavActive: boolean = false;
   isSmallerScreen: boolean = false;
 
-  constructor() { }
+  constructor(
+    public auth: AuthService
+  ) { }
 
   ngOnInit() {
     this.innerWidth = window.innerWidth;
@@ -28,7 +31,7 @@ export class PublicNavigationComponent implements OnInit {
   }
 
   // Uygulamanın açık olduğu sekmenin boyutu her değiştiğinde bize ekran genişliğini pixel olarak döndürür.
-  @HostListener('window:resize', ['$event'])
+  @HostListener('window:resize')
   OnResize() {
     this.innerWidth = window.innerWidth;
     this.CheckScreen();

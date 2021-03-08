@@ -1,3 +1,49 @@
-<p>
-  user-navigation works!
-</p>
+<mat-sidenav-container *ngIf="this.auth.isLoggedIn">
+  <!-- Sadece Mobilde Görünecek Sidenav -->
+  <mat-sidenav mode="push" [(opened)]="isSidenavActive">
+    <mat-nav-list>
+      <mat-list-item (click)="isSidenavActive = false"><a [routerLink]="['overview']">Overview</a></mat-list-item>
+      <mat-list-item (click)="isSidenavActive = false"><a [routerLink]="['buildings']">Buildings</a></mat-list-item>
+      <mat-list-item (click)="isSidenavActive = false"><a [routerLink]="['researches']">Researches</a></mat-list-item>
+      <mat-list-item (click)="isSidenavActive = false"><a [routerLink]="['world']">World</a></mat-list-item>
+      <mat-list-item (click)="isSidenavActive = false"><a [routerLink]="['expeditions']">Expeditions</a></mat-list-item>
+      <mat-list-item (click)="isSidenavActive = false"><a [routerLink]="['army']">Army</a></mat-list-item>
+      <mat-list-item (click)="isSidenavActive = false"><a [routerLink]="['rankings']">Rankings</a></mat-list-item>
+      <mat-list-item></mat-list-item>
+      <mat-list-item (click)="isSidenavActive = false && Logout()"><a [routerLink]="['login']">Logout</a>
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <!-- Bilgisayarda Görünecek Navbar -->
+    <mat-toolbar color="primary" *ngIf="!isSmallerScreen" class="navbar">
+      <div>
+        <a href="">The Last Raid MMO</a>
+      </div>
+      <div>
+        <nav mat-tab-nav-bar>
+          <a mat-tab-link [routerLink]="['overview']">Overview</a>
+          <a mat-tab-link [routerLink]="['buildings']">Buildings</a>
+          <a mat-tab-link [routerLink]="['researches']">Researches</a>
+          <a mat-tab-link [routerLink]="['world']">World</a>
+          <a mat-tab-link [routerLink]="['expeditions']">Expeditions</a>
+          <a mat-tab-link [routerLink]="['army']">Army</a>
+          <a mat-tab-link [routerLink]="['rankings']">Rankings</a>
+          <a mat-tab-link (click)="Logout()" [routerLink]="['login']">Logout</a>
+        </nav>
+      </div>
+    </mat-toolbar>
+    <!-- Mobilde Görünecek Navbar -->
+    <mat-toolbar color="primary" *ngIf="isSmallerScreen" class="navbar">
+      <div>
+        <button mat-icon-button (click)="isSidenavActive = true">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+      <div>
+        <span>The Last Raid MMO</span>
+      </div>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

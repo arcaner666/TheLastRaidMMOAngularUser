@@ -8,7 +8,7 @@ import { SessionRecord } from '../models/SessionRecord';
 })
 export class AuthService {
 
-  public apiUrl = "https://localhost:44342/api/";
+  public readonly apiUrl = "https://localhost:44342/api/";
   public isLoggedIn: boolean = this.AuthControl();
 
   constructor(
