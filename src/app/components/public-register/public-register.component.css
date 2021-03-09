@@ -15,6 +15,6 @@
 
 .mat-raised-button {
     background-color: rgb(0, 211, 200);
-    width: max-content;
-    height: max-content;
+    padding: 5px;
+    width: 100%;
 }

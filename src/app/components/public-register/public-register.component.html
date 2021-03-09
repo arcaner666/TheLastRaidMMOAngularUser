@@ -37,10 +37,8 @@
         <input matInput type="text" id="nickname" name="nickname" #nickname="ngModel" [(ngModel)]="player.Nickname"
           required>
       </mat-form-field>
-    </mat-card-content>
-    <mat-card-actions>
       <button mat-raised-button type="submit"
         [disabled]="RegisterForm.invalid || password.value != password2.value || email.value != email2.value">Register</button>
-    </mat-card-actions>
+    </mat-card-content>
   </form>
 </mat-card>

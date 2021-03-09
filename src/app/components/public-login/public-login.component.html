@@ -15,9 +15,7 @@
         <input matInput type="password" id="password" name="password" #password="ngModel" [(ngModel)]="player.Password_"
           (keyup)="Reset()" required>
       </mat-form-field>
-    </mat-card-content>
-    <mat-card-actions>
       <button mat-raised-button type="submit" [disabled]="LoginForm.invalid">Login</button>
-    </mat-card-actions>
+    </mat-card-content>
   </form>
 </mat-card>
