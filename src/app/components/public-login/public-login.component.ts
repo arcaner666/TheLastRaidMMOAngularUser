@@ -39,7 +39,7 @@ export class PublicLoginComponent implements OnInit, OnDestroy {
   Login() {
     this.result = new Result();
     var date: Date = new Date();
-    this.sub1 = this.auth.Login(this.player).subscribe((a: any) => {
+    this.sub1 = this.auth.Login(this.player).subscribe((a: Player) => {
       if (a != null) {
         console.log(a);
         localStorage.setItem("token", this.auth.GenerateToken(64));
@@ -47,7 +47,7 @@ export class PublicLoginComponent implements OnInit, OnDestroy {
         this.sessionRecord.LoginTime = date.getTime().toString();
         this.sessionRecord.LogoutTime = "";
         this.sessionRecord.LoginData = "";
-        this.sub2 = this.auth.AddSessionRecord(this.sessionRecord).subscribe((b: any) => {
+        this.sub2 = this.auth.AddSessionRecord(this.sessionRecord).subscribe((b: SessionRecord) => {
           console.log(b);
           localStorage.setItem("sessionId", b.SessionRecordID.toString());
           this.router.navigate(['overview']);

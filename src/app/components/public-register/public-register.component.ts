@@ -51,7 +51,7 @@ export class PublicRegisterComponent implements OnInit, OnDestroy {
         var date: Date = new Date();
         this.player.ConfirmationCode = this.auth.GenerateToken(6);
         this.player.ConfirmationDate = date.getTime().toString();
-        this.sub2 = this.auth.Register(player).subscribe((b: any) => {
+        this.sub2 = this.auth.Register(player).subscribe((b: Player) => {
           console.log(b);
           this.player = new Player();
           this.passwordAgain = "";

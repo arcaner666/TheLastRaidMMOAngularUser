@@ -47,7 +47,7 @@ export class UserNavigationComponent implements OnInit, OnDestroy {
   }
 
   Logout() {
-    this.sub1 = this.auth.GetSessionRecord(parseInt(localStorage.getItem("sessionId")!)).subscribe((sr: any) => {
+    this.sub1 = this.auth.GetSessionRecord(parseInt(localStorage.getItem("sessionId")!)).subscribe((sr: SessionRecord) => {
       console.log(sr);
       var date: Date = new Date();
       this.sessionRecord = sr;
