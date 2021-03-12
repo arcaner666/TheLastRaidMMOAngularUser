@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { AuthService } from './../../services/auth.service';
 import { Player } from 'src/app/models/Player';
 import { Result } from 'src/app/models/Result';
@@ -19,8 +20,8 @@ export class PublicRegisterComponent implements OnInit, OnDestroy {
   passwordAgain: string = "";
   emailAgain: string = "";
 
-  sub1: any;
-  sub2: any;
+  sub1: Subscription;
+  sub2: Subscription;
 
   constructor(
     public auth: AuthService,

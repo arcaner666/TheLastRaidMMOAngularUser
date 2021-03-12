@@ -9,9 +9,7 @@ export class AuthGuard implements CanActivate {
   constructor(
     public auth: AuthService,
     public router: Router
-  ) {
-
-  }
+  ) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     var canPass: boolean = false;
@@ -23,5 +21,4 @@ export class AuthGuard implements CanActivate {
     }
     return canPass;
   }
-
 }

@@ -1,5 +1,6 @@
 import { Component, HostListener, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { AuthService } from './../../services/auth.service';
 import { SessionRecord } from './../../models/SessionRecord';
 
@@ -16,8 +17,8 @@ export class UserNavigationComponent implements OnInit, OnDestroy {
   sessionRecord: SessionRecord = new SessionRecord();
 
   innerWidth: any;
-  sub1: any;
-  sub2: any;
+  sub1: Subscription;
+  sub2: Subscription;
 
   constructor(
     public auth: AuthService,
@@ -47,8 +48,7 @@ export class UserNavigationComponent implements OnInit, OnDestroy {
   }
 
   Logout() {
-    this.sub1 = this.auth.GetSessionRecord(parseInt(localStorage.getItem("sessionId")!)).subscribe((sr: SessionRecord) => {
-      console.log(sr);
+    this.sub1 = this.auth.GetSessionRecord(parseInt(localStorage.getItem("sessionId"))).subscribe((sr: SessionRecord) => {
       var date: Date = new Date();
       this.sessionRecord = sr;
       this.sessionRecord.LogoutTime = date.getTime().toString();
@@ -57,7 +57,7 @@ export class UserNavigationComponent implements OnInit, OnDestroy {
         localStorage.removeItem("sessionId");
         localStorage.removeItem("token");
         this.auth.isLoggedIn = false;
-        this.router.navigate(['login']);
+        window.location.reload();
       });
     });
   }

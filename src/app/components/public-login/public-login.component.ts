@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { AuthService } from './../../services/auth.service';
 import { Result } from 'src/app/models/Result';
 import { Player } from 'src/app/models/Player';
@@ -16,8 +17,8 @@ export class PublicLoginComponent implements OnInit, OnDestroy {
   sessionRecord: SessionRecord = new SessionRecord();
   result: Result = new Result();
 
-  sub1: any;
-  sub2: any;
+  sub1: Subscription;
+  sub2: Subscription;
 
   constructor(
     public auth: AuthService,

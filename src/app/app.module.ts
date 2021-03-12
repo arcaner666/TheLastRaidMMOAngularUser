@@ -6,8 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 
-import { AuthService } from './services/auth.service';
-import { AuthGuard } from './services/auth.guard';
+import { FlexLayoutModule } from "@angular/flex-layout";
+import { MaterialModule } from './modules/material/material.module';
 
 import { PublicAboutComponent } from './components/public-about/public-about.component';
 import { PublicContactComponent } from './components/public-contact/public-contact.component';
@@ -29,7 +29,8 @@ import { UserRankingsComponent } from './components/user-rankings/user-rankings.
 import { UserResearchesComponent } from './components/user-researches/user-researches.component';
 import { UserWorldComponent } from './components/user-world/user-world.component';
 
-import { MaterialModule } from './modules/material/material.module';
+import { AuthService } from './services/auth.service';
+import { AuthGuard } from './services/auth.guard';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { MaterialModule } from './modules/material/material.module';
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
-    MaterialModule
+    MaterialModule,
+    FlexLayoutModule
   ],
   providers: [
     AuthGuard,

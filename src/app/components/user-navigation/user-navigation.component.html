@@ -10,7 +10,7 @@
       <mat-list-item (click)="isSidenavActive = false"><a [routerLink]="['army']">Army</a></mat-list-item>
       <mat-list-item (click)="isSidenavActive = false"><a [routerLink]="['rankings']">Rankings</a></mat-list-item>
       <mat-list-item></mat-list-item>
-      <mat-list-item (click)="isSidenavActive = false && Logout()"><a [routerLink]="['login']">Logout</a>
+      <mat-list-item (click)="isSidenavActive = false && Logout()"><a>Logout</a>
       </mat-list-item>
     </mat-nav-list>
   </mat-sidenav>
@@ -29,7 +29,7 @@
           <a mat-tab-link [routerLink]="['expeditions']">Expeditions</a>
           <a mat-tab-link [routerLink]="['army']">Army</a>
           <a mat-tab-link [routerLink]="['rankings']">Rankings</a>
-          <a mat-tab-link (click)="Logout()" [routerLink]="['login']">Logout</a>
+          <a mat-tab-link (click)="Logout()">Logout</a>
         </nav>
       </div>
     </mat-toolbar>
