@@ -1,3 +1,34 @@
-<p>
-  user-buildings works!
-</p>
+<div fxLayout="column" fxFill>
+  <div fxFlex="33"></div>
+  <div fxFlex>
+    <div fxLayout="row" fxFill>
+      <div fxFlex="15"></div>
+      <div fxFlex>
+        <mat-card>
+          <mat-card-header>
+            <mat-card-title fxLayoutAlign="space-between">
+              <span>Castle</span>
+              <span>Level 1</span>
+            </mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <p>Content</p>
+          </mat-card-content>
+          <mat-card-actions fxLayoutAlign="space-between center" fxLayoutGap="10px">
+            <span fxLayoutAlign="center center" fxLayoutGap="5px">
+              <mat-icon>query_builder</mat-icon>
+              <span class="text">1m:24s</span>
+            </span>
+            <span fxLayoutAlign="center center" fxLayoutGap="5px">
+              <mat-icon svgIcon="food"></mat-icon>
+              <span class="text">1500</span>
+            </span>
+            <button mat-raised-button [disabled]="">Upgrade</button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+      <div fxFlex="15"></div>
+    </div>
+  </div>
+  <div fxFlex="33"></div>
+</div>
