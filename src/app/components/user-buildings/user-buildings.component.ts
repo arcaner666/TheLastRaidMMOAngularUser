@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatIconRegistry } from "@angular/material/icon";
+import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from "@angular/platform-browser";
 
 @Component({
@@ -10,12 +10,12 @@ import { DomSanitizer } from "@angular/platform-browser";
 export class UserBuildingsComponent implements OnInit {
 
   constructor(
-    private matIconRegistry: MatIconRegistry,
-    private domSanitizer: DomSanitizer
+    public matIconRegistry: MatIconRegistry,
+    public domSanitizer: DomSanitizer
   ) {
     this.matIconRegistry.addSvgIcon(
       "food",
-      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/icons/food.svg")
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/icons/food1-32x32-white.svg")
     );
   }
 
