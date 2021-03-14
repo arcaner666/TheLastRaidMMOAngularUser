@@ -1,42 +1,377 @@
-<div fxLayout="column" fxFill>
-  <div fxFlex="33"></div>
-  <div fxFlex>
-    <div fxLayout="row" fxFill>
-      <div fxFlex="15"></div>
-      <div fxFlex>
-        <mat-card>
-          <mat-card-header>
-            <mat-card-title fxLayoutAlign="space-between">
-              <span>Castle</span>
-              <span>Level 1</span>
-            </mat-card-title>
-          </mat-card-header>
-          <mat-card-content>
-            <p>Content</p>
-          </mat-card-content>
-          <mat-card-actions fxLayoutAlign="space-between center" fxLayoutGap="10px">
-            <span fxLayoutAlign="center center" fxLayoutGap="5px">
-              <mat-icon class="first-icon">query_builder</mat-icon>
-              <span>1m:24s</span>
-            </span>
-            <span fxLayoutAlign="center center" fxLayoutGap="5px">
-              <mat-icon svgIcon="food"></mat-icon>
-              <span>1500</span>
-            </span>
-            <span fxLayoutAlign="center center" fxLayoutGap="5px">
-              <mat-icon>park</mat-icon>
-              <span>2350</span>
-            </span>
-            <span fxLayoutAlign="center center" fxLayoutGap="5px">
-              <mat-icon>park</mat-icon>
-              <span>700</span>
-            </span>
-            <button mat-raised-button [disabled]="">Upgrade</button>
-          </mat-card-actions>
-        </mat-card>
-      </div>
-      <div fxFlex="15"></div>
-    </div>
-  </div>
-  <div fxFlex="33"></div>
+<div class="container" fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="20px" fxFill>
+  <mat-card class="bg-color1">
+    <mat-card-header>
+      <mat-card-title fxLayoutAlign="space-between">
+        <span>Castle</span>
+        <span>Level 1</span>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <br>
+      <p class="ml">The lord of the lands lives here. Challenges are won or lost here.</p>
+    </mat-card-content>
+    <mat-card-actions fxLayoutAlign="space-between center" fxLayoutGap="10px">
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon class="ml">query_builder</mat-icon>
+        <span>1m:24s</span>
+      </span>
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon svgIcon="food"></mat-icon>
+        <span>1500</span>
+      </span>
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon>park</mat-icon>
+        <span>2350</span>
+      </span>
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon>park</mat-icon>
+        <span>700</span>
+      </span>
+      <button mat-raised-button class="btn-color1" [disabled]="">Upgrade</button>
+    </mat-card-actions>
+  </mat-card>
+  <mat-card class="bg-color2">
+    <mat-card-header>
+      <mat-card-title fxLayoutAlign="space-between">
+        <span>Farm</span>
+        <span>Level 1</span>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <br>
+      <p class="ml">It is the building where the people provide their livelihood and feed.</p>
+    </mat-card-content>
+    <mat-card-actions fxLayoutAlign="space-between center" fxLayoutGap="10px">
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon class="ml">query_builder</mat-icon>
+        <span>1m:24s</span>
+      </span>
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon svgIcon="food"></mat-icon>
+        <span>1500</span>
+      </span>
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon>park</mat-icon>
+        <span>2350</span>
+      </span>
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon>park</mat-icon>
+        <span>700</span>
+      </span>
+      <button mat-raised-button class="btn-color2" [disabled]="">Upgrade</button>
+    </mat-card-actions>
+  </mat-card>
+  <mat-card class="bg-color3">
+    <mat-card-header>
+      <mat-card-title fxLayoutAlign="space-between">
+        <span>Woodcutter Hut</span>
+        <span>Level 1</span>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <br>
+      <p class="ml">It is the building where the wood is cut and collected. Fast production causes
+        strong growth.</p>
+    </mat-card-content>
+    <mat-card-actions fxLayoutAlign="space-between center" fxLayoutGap="10px">
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon class="ml">query_builder</mat-icon>
+        <span>1m:24s</span>
+      </span>
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon svgIcon="food"></mat-icon>
+        <span>1500</span>
+      </span>
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon>park</mat-icon>
+        <span>2350</span>
+      </span>
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon>park</mat-icon>
+        <span>700</span>
+      </span>
+      <button mat-raised-button class="btn-color3" [disabled]="">Upgrade</button>
+    </mat-card-actions>
+  </mat-card>
+  <mat-card class="bg-color4">
+    <mat-card-header>
+      <mat-card-title fxLayoutAlign="space-between">
+        <span>Stone Quarry</span>
+        <span>Level 1</span>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <br>
+      <p class="ml">It is the building where volcanic rocks and various stones are extracted.</p>
+    </mat-card-content>
+    <mat-card-actions fxLayoutAlign="space-between center" fxLayoutGap="10px">
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon class="ml">query_builder</mat-icon>
+        <span>1m:24s</span>
+      </span>
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon svgIcon="food"></mat-icon>
+        <span>1500</span>
+      </span>
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon>park</mat-icon>
+        <span>2350</span>
+      </span>
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon>park</mat-icon>
+        <span>700</span>
+      </span>
+      <button mat-raised-button class="btn-color4" [disabled]="">Upgrade</button>
+    </mat-card-actions>
+  </mat-card>
+  <mat-card class="bg-color5">
+    <mat-card-header>
+      <mat-card-title fxLayoutAlign="space-between">
+        <span>Iron Mine</span>
+        <span>Level 1</span>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <br>
+      <p class="ml">It is the building where iron can be used in weapon-making and hunting is
+        extracted.</p>
+    </mat-card-content>
+    <mat-card-actions fxLayoutAlign="space-between center" fxLayoutGap="10px">
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon class="ml">query_builder</mat-icon>
+        <span>1m:24s</span>
+      </span>
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon svgIcon="food"></mat-icon>
+        <span>1500</span>
+      </span>
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon>park</mat-icon>
+        <span>2350</span>
+      </span>
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon>park</mat-icon>
+        <span>700</span>
+      </span>
+      <button mat-raised-button class="btn-color5" [disabled]="">Upgrade</button>
+    </mat-card-actions>
+  </mat-card>
+  <mat-card class="bg-color6">
+    <mat-card-header>
+      <mat-card-title fxLayoutAlign="space-between">
+        <span>Warehouse</span>
+        <span>Level 1</span>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <br>
+      <p class="ml">You collected and produced materials that are stored here.</p>
+    </mat-card-content>
+    <mat-card-actions fxLayoutAlign="space-between center" fxLayoutGap="10px">
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon class="ml">query_builder</mat-icon>
+        <span>1m:24s</span>
+      </span>
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon svgIcon="food"></mat-icon>
+        <span>1500</span>
+      </span>
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon>park</mat-icon>
+        <span>2350</span>
+      </span>
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon>park</mat-icon>
+        <span>700</span>
+      </span>
+      <button mat-raised-button class="btn-color6" [disabled]="">Upgrade</button>
+    </mat-card-actions>
+  </mat-card>
+  <mat-card class="bg-color7">
+    <mat-card-header>
+      <mat-card-title fxLayoutAlign="space-between">
+        <span>Barracks</span>
+        <span>Level 1</span>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <br>
+      <p class="ml">It is the building where soldiers were raised. The more soldiers trained, the
+        more likely it is to win the battle.</p>
+    </mat-card-content>
+    <mat-card-actions fxLayoutAlign="space-between center" fxLayoutGap="10px">
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon class="ml">query_builder</mat-icon>
+        <span>1m:24s</span>
+      </span>
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon svgIcon="food"></mat-icon>
+        <span>1500</span>
+      </span>
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon>park</mat-icon>
+        <span>2350</span>
+      </span>
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon>park</mat-icon>
+        <span>700</span>
+      </span>
+      <button mat-raised-button class="btn-color7" [disabled]="">Upgrade</button>
+    </mat-card-actions>
+  </mat-card>
+  <mat-card class="bg-color8">
+    <mat-card-header>
+      <mat-card-title fxLayoutAlign="space-between">
+        <span>Barn</span>
+        <span>Level 1</span>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <br>
+      <p class="ml">The mounts needed by the army and the people are raised here.</p>
+    </mat-card-content>
+    <mat-card-actions fxLayoutAlign="space-between center" fxLayoutGap="10px">
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon class="ml">query_builder</mat-icon>
+        <span>1m:24s</span>
+      </span>
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon svgIcon="food"></mat-icon>
+        <span>1500</span>
+      </span>
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon>park</mat-icon>
+        <span>2350</span>
+      </span>
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon>park</mat-icon>
+        <span>700</span>
+      </span>
+      <button mat-raised-button class="btn-color8" [disabled]="">Upgrade</button>
+    </mat-card-actions>
+  </mat-card>
+  <mat-card class="bg-color9">
+    <mat-card-header>
+      <mat-card-title fxLayoutAlign="space-between">
+        <span>Workshop</span>
+        <span>Level 1</span>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <br>
+      <p class="ml">Military equipment and siege weapons are produced here.</p>
+    </mat-card-content>
+    <mat-card-actions fxLayoutAlign="space-between center" fxLayoutGap="10px">
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon class="ml">query_builder</mat-icon>
+        <span>1m:24s</span>
+      </span>
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon svgIcon="food"></mat-icon>
+        <span>1500</span>
+      </span>
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon>park</mat-icon>
+        <span>2350</span>
+      </span>
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon>park</mat-icon>
+        <span>700</span>
+      </span>
+      <button mat-raised-button class="btn-color9" [disabled]="">Upgrade</button>
+    </mat-card-actions>
+  </mat-card>
+  <mat-card class="bg-color10">
+    <mat-card-header>
+      <mat-card-title fxLayoutAlign="space-between">
+        <span>Village Council</span>
+        <span>Level 1</span>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <br>
+      <p class="ml">Great decisions about the general affairs of the village are made here.</p>
+    </mat-card-content>
+    <mat-card-actions fxLayoutAlign="space-between center" fxLayoutGap="10px">
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon class="ml">query_builder</mat-icon>
+        <span>1m:24s</span>
+      </span>
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon svgIcon="food"></mat-icon>
+        <span>1500</span>
+      </span>
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon>park</mat-icon>
+        <span>2350</span>
+      </span>
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon>park</mat-icon>
+        <span>700</span>
+      </span>
+      <button mat-raised-button class="btn-color10" [disabled]="">Upgrade</button>
+    </mat-card-actions>
+  </mat-card>
+  <mat-card class="bg-color11">
+    <mat-card-header>
+      <mat-card-title fxLayoutAlign="space-between">
+        <span>Blacksmith</span>
+        <span>Level 1</span>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <br>
+      <p class="ml">It is the building where weapons and shields are produced.</p>
+    </mat-card-content>
+    <mat-card-actions fxLayoutAlign="space-between center" fxLayoutGap="10px">
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon class="ml">query_builder</mat-icon>
+        <span>1m:24s</span>
+      </span>
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon svgIcon="food"></mat-icon>
+        <span>1500</span>
+      </span>
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon>park</mat-icon>
+        <span>2350</span>
+      </span>
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon>park</mat-icon>
+        <span>700</span>
+      </span>
+      <button mat-raised-button class="btn-color11" [disabled]="">Upgrade</button>
+    </mat-card-actions>
+  </mat-card>
+  <mat-card class="bg-color12">
+    <mat-card-header>
+      <mat-card-title fxLayoutAlign="space-between">
+        <span>Castle Wall</span>
+        <span>Level 1</span>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <br>
+      <p class="ml">It protects the castle against raids and saves time to prepare the army.</p>
+    </mat-card-content>
+    <mat-card-actions fxLayoutAlign="space-between center" fxLayoutGap="10px">
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon class="ml">query_builder</mat-icon>
+        <span>1m:24s</span>
+      </span>
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon svgIcon="food"></mat-icon>
+        <span>1500</span>
+      </span>
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon>park</mat-icon>
+        <span>2350</span>
+      </span>
+      <span fxLayoutAlign="center center" fxLayoutGap="5px">
+        <mat-icon>park</mat-icon>
+        <span>700</span>
+      </span>
+      <button mat-raised-button class="btn-color12" [disabled]="">Upgrade</button>
+    </mat-card-actions>
+  </mat-card>
 </div>
