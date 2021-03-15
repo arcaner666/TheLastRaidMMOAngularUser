@@ -1,5 +1,4 @@
 export class SessionRecord {
-
     SessionRecordID: number;
     PlayerID: number;
     LoginTime: string;

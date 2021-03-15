@@ -1,4 +1,4 @@
 export class Result {
-    isDone: boolean | undefined;
-    info: string | undefined;
+    isDone: boolean;
+    info: string;
 }

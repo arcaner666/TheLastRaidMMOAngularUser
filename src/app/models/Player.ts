@@ -1,5 +1,4 @@
 export class Player {
-
     PlayerID: number;
     UserName: string;
     Password_: string;
@@ -7,5 +6,4 @@ export class Player {
     Email: string;
     ConfirmationCode: string;
     ConfirmationDate: string;
-
 }
