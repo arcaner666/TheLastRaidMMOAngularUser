@@ -48,9 +48,9 @@ export class PublicLoginComponent implements OnInit, OnDestroy {
         this.sessionRecord.LoginTime = date.getTime().toString();
         this.sessionRecord.LogoutTime = "";
         this.sessionRecord.LoginData = "";
-        this.sub2 = this.auth.AddSessionRecord(this.sessionRecord).subscribe((b: SessionRecord) => {
+        this.sub2 = this.auth.AddSessionRecord(this.sessionRecord).subscribe((b: Result) => {
           console.log(b);
-          localStorage.setItem("sessionId", b.SessionRecordID.toString());
+          localStorage.setItem("sessionId", b.info);
           this.router.navigate(['overview']);
         });
       }
