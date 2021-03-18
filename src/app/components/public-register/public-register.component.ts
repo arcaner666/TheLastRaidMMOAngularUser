@@ -43,22 +43,22 @@ export class PublicRegisterComponent implements OnInit, OnDestroy {
   Register(player: Player) {
     this.registerResult = new Result();
     this.checkNameResult = new Result();
-    this.sub1 = this.auth.CheckUserNameAvailability(player.UserName).subscribe(a => {
-      if (a) {
-        this.checkNameResult.isDone = false;
-        this.checkNameResult.info = "This user name is already in use.";
+    this.sub1 = this.auth.CheckUserNameAvailability(player.UserName).subscribe((a: Result) => {
+      if (!a.isDone) {
+        this.checkNameResult.isDone = a.isDone;
+        this.checkNameResult.info = a.info;
       }
       else {
         var date: Date = new Date();
         this.player.ConfirmationCode = this.auth.GenerateToken(6);
         this.player.ConfirmationDate = date.getTime().toString();
-        this.sub2 = this.auth.Register(player).subscribe((b: Player) => {
+        this.sub2 = this.auth.Register(player).subscribe((b: Result) => {
           console.log(b);
           this.player = new Player();
           this.passwordAgain = "";
           this.emailAgain = "";
-          this.registerResult.isDone = true;
-          this.registerResult.info = "Registration successful.";
+          this.registerResult.isDone = b.isDone;
+          this.registerResult.info = b.info;
           //document.getElementById("openRegistrationModal").click();
         }, error => {
           this.registerResult.isDone = false;
