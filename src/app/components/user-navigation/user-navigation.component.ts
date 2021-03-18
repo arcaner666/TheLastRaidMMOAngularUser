@@ -57,7 +57,8 @@ export class UserNavigationComponent implements OnInit, OnDestroy {
         localStorage.removeItem("sessionId");
         localStorage.removeItem("token");
         this.auth.isLoggedIn = false;
-        window.location.reload();
+        //this.router.navigate(['login']);
+        //window.location.reload();
       });
     });
   }

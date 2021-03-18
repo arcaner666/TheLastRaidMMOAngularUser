@@ -15,10 +15,6 @@ export class AuthService {
     public http: HttpClient
   ) { }
 
-  CheckAPI() {
-    return this.http.get(this.apiUrl + "checkapi");
-  }
-
   AuthControl() {
     var token = localStorage.getItem("token");
     if (token) {
