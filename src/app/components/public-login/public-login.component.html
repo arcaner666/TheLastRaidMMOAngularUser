@@ -5,11 +5,11 @@
       <div fxFlex="33"></div>
       <div fxFlex>
         <mat-card>
-          <form #LoginForm="ngForm" (ngSubmit)="Login()">
-            <mat-card-header>
-              <mat-card-title>User Login</mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
+          <mat-card-header>
+            <mat-card-title>User Login</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <form #LoginForm="ngForm" (ngSubmit)="Login()">
               <mat-form-field floatLabel="auto" appearance="outline" fxFill>
                 <mat-label>User Name</mat-label>
                 <input matInput type="text" id="username" name="username" #username="ngModel"
@@ -22,8 +22,8 @@
                   [(ngModel)]="player.Password_" (keyup)="Reset()" required>
               </mat-form-field>
               <button mat-raised-button type="submit" [disabled]="LoginForm.invalid" fxFill>Login</button>
-            </mat-card-content>
-          </form>
+            </form>
+          </mat-card-content>
         </mat-card>
       </div>
       <div fxFlex="33"></div>

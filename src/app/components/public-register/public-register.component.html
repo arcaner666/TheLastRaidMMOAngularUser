@@ -5,11 +5,11 @@
       <div fxFlex="33"></div>
       <div fxFlex>
         <mat-card>
-          <form #RegisterForm="ngForm" (ngSubmit)="Register(player)">
-            <mat-card-header>
-              <mat-card-title>User Register</mat-card-title>
-            </mat-card-header>
-            <mat-card-content>
+          <mat-card-header>
+            <mat-card-title>User Register</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <form #RegisterForm="ngForm" (ngSubmit)="Register(player)">
               <mat-form-field floatLabel="auto" appearance="outline" fxFill>
                 <mat-label>User Name</mat-label>
                 <input matInput type="text" id="username" name="username" #username="ngModel"
@@ -48,8 +48,8 @@
               <button mat-raised-button type="submit"
                 [disabled]="RegisterForm.invalid || password.value != password2.value || email.value != email2.value"
                 fxFill>Register</button>
-            </mat-card-content>
-          </form>
+            </form>
+          </mat-card-content>
         </mat-card>
       </div>
       <div fxFlex="33"></div>
