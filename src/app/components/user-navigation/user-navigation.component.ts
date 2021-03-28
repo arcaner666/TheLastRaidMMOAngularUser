@@ -53,7 +53,6 @@ export class UserNavigationComponent implements OnInit, OnDestroy {
       this.sessionRecord = sr;
       this.sessionRecord.LogoutTime = date.getTime().toString();
       this.sub2 = this.auth.UpdateSessionRecord(this.sessionRecord).subscribe(a => {
-        console.log(a);
         localStorage.removeItem("sessionId");
         localStorage.removeItem("token");
         this.auth.isLoggedIn = false;
