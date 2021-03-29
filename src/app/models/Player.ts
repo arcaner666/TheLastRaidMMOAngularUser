@@ -1,7 +1,7 @@
 export class Player {
-    PlayerID: number;
+    PlayerId: number;
     UserName: string;
-    Password_: string;
+    Password: string;
     Nickname: string;
     Email: string;
     ConfirmationCode: string;

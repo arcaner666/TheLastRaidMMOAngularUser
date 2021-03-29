@@ -1,8 +1,8 @@
 import { Component, HostListener, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { SessionRecord } from 'src/app/models/SessionRecord';
 import { AuthService } from './../../services/auth.service';
-import { SessionRecord } from './../../models/SessionRecord';
 
 @Component({
   selector: 'app-user-navigation',

@@ -1,6 +1,6 @@
 export class SessionRecord {
-    SessionRecordID: number;
-    PlayerID: number;
+    SessionRecordId: number;
+    PlayerId: number;
     LoginTime: string;
     LogoutTime: string;
     LoginData: string;

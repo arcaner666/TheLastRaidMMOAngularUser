@@ -1,10 +1,10 @@
+import { SessionRecord } from './../../models/SessionRecord';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Subscription, VirtualTimeScheduler } from 'rxjs';
 import { AuthService } from './../../services/auth.service';
 import { Result } from 'src/app/models/Result';
 import { Player } from 'src/app/models/Player';
-import { SessionRecord } from './../../models/SessionRecord';
 
 @Component({
   selector: 'app-public-login',
@@ -41,13 +41,15 @@ export class PublicLoginComponent implements OnInit, OnDestroy {
     this.result = new Result();
     var date: Date = new Date();
     this.sub1 = this.auth.Login(this.player).subscribe((a: Player) => {
+      console.log(a);
       if (a != null) {
         console.log(a);
         localStorage.setItem("token", this.auth.GenerateToken(64));
-        this.sessionRecord.PlayerID = a.PlayerID;
+        this.sessionRecord.PlayerId = a.PlayerId;
         this.sessionRecord.LoginTime = date.getTime().toString();
         this.sessionRecord.LogoutTime = "";
         this.sessionRecord.LoginData = "";
+        console.log(this.sessionRecord);
         this.sub2 = this.auth.AddSessionRecord(this.sessionRecord).subscribe((b: Result) => {
           console.log(b);
           localStorage.setItem("sessionId", b.info);

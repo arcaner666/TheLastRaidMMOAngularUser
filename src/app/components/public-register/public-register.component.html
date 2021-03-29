@@ -19,7 +19,7 @@
               <mat-form-field floatLabel="auto" appearance="outline" fxFill>
                 <mat-label>Password</mat-label>
                 <input matInput type="password" id="password" name="password" #password="ngModel"
-                  [(ngModel)]="player.Password_" required>
+                  [(ngModel)]="player.Password" required>
                 <mat-hint align="end" *ngIf="password.value != password2.value && password2.value.length > 0">Passwords
                   do not match!</mat-hint>
               </mat-form-field>

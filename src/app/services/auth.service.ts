@@ -1,7 +1,7 @@
+import { SessionRecord } from './../models/SessionRecord';
+import { Player } from 'src/app/models/Player';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Player } from '../models/Player';
-import { SessionRecord } from '../models/SessionRecord';
 
 @Injectable({
   providedIn: 'root'
@@ -37,7 +37,7 @@ export class AuthService {
   }
 
   UpdateSessionRecord(sessionRecord: SessionRecord) {
-    return this.http.put(this.apiUrl + "updatesessionrecord/" + sessionRecord.SessionRecordID, sessionRecord);
+    return this.http.put(this.apiUrl + "updatesessionrecord/" + sessionRecord.SessionRecordId, sessionRecord);
   }
 
   GetSessionRecord(sessionId: number) {
