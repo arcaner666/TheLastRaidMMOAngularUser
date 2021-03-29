@@ -1,3 +1,4 @@
+import { MapService } from './../../services/map.service';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
@@ -22,9 +23,11 @@ export class PublicRegisterComponent implements OnInit, OnDestroy {
 
   sub1: Subscription;
   sub2: Subscription;
+  sub3: Subscription;
 
   constructor(
     public auth: AuthService,
+    public map: MapService,
     public router: Router
   ) { }
 
@@ -38,33 +41,37 @@ export class PublicRegisterComponent implements OnInit, OnDestroy {
     if (this.sub2) {
       this.sub2.unsubscribe();
     }
+    if (this.sub3) {
+      this.sub3.unsubscribe();
+    }
   }
 
   Register(player: Player) {
     this.registerResult = new Result();
     this.checkNameResult = new Result();
     this.sub1 = this.auth.CheckUserNameAvailability(player.UserName).subscribe((a: Result) => {
-      if (!a.isDone) {
-        this.checkNameResult.isDone = a.isDone;
-        this.checkNameResult.info = a.info;
-      }
-      else {
+      if (a.isDone) {
         var date: Date = new Date();
         this.player.ConfirmationCode = this.auth.GenerateToken(6);
         this.player.ConfirmationDate = date.getTime().toString();
         this.sub2 = this.auth.Register(player).subscribe((b: Result) => {
           console.log(b);
+          if (b.isDone) {
+            this.sub3 = this.map.SetPlayerLocation(b.value).subscribe((c: Result) => {
+              console.log(c);
+            });
+          }
           this.player = new Player();
           this.passwordAgain = "";
           this.emailAgain = "";
           this.registerResult.isDone = b.isDone;
           this.registerResult.info = b.info;
           //document.getElementById("openRegistrationModal").click();
-        }, error => {
-          this.registerResult.isDone = false;
-          this.registerResult.info = "Registration failed!" + error;
-          //document.getElementById("openRegistrationModal").click();
         });
+      }
+      else {
+        this.checkNameResult.isDone = a.isDone;
+        this.checkNameResult.info = a.info;
       }
     });
   }

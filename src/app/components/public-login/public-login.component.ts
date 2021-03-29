@@ -51,7 +51,7 @@ export class PublicLoginComponent implements OnInit, OnDestroy {
         console.log(this.sessionRecord);
         this.sub2 = this.auth.AddSessionRecord(this.sessionRecord).subscribe((b: Result) => {
           console.log(b);
-          localStorage.setItem("sessionId", b.info);
+          localStorage.setItem("sessionId", b.value.toString());
           this.router.navigate(['overview']);
         });
       }
@@ -61,10 +61,6 @@ export class PublicLoginComponent implements OnInit, OnDestroy {
         console.log(this.result.info);
         this.player = new Player();
       }
-    }, error => {
-      this.result.isDone = false;
-      this.result.info = "Error: " + error;
-      console.log(this.result.info);
     });
   }
 
