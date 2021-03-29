@@ -1,4 +1,4 @@
-import { SessionRecord } from './../models/SessionRecord';
+import { SessionRecord } from '../models/SessionRecord';
 import { Player } from 'src/app/models/Player';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
