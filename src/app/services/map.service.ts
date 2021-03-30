@@ -13,6 +13,6 @@ export class MapService {
   ) { }
 
   SetPlayerLocation(playerId: number) {
-    return this.http.post(this.apiUrl + "setplayerlocation", playerId);
+    return this.http.get(this.apiUrl + "setplayerlocation/" + playerId);
   }
 }
