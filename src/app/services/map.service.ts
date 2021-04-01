@@ -12,7 +12,8 @@ export class MapService {
     public http: HttpClient
   ) { }
 
-  SetPlayerLocation(playerId: number) {
-    return this.http.get(this.apiUrl + "setplayerlocation/" + playerId);
+  GetLocationsByRegion(region: number) {
+    return this.http.get(this.apiUrl + "getlocationsbyregion/" + region);
   }
+
 }

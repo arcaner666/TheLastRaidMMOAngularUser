@@ -48,7 +48,6 @@ export class PublicLoginComponent implements OnInit, OnDestroy {
         this.sessionRecord.LoginTime = date.getTime().toString();
         this.sessionRecord.LogoutTime = "";
         this.sessionRecord.LoginData = "";
-        console.log(this.sessionRecord);
         this.sub2 = this.auth.AddSessionRecord(this.sessionRecord).subscribe((b: Result) => {
           console.log(b);
           localStorage.setItem("sessionId", b.value.toString());
