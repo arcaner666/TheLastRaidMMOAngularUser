@@ -19,12 +19,12 @@ export class AuthService {
     var token = localStorage.getItem("token");
     if (token) {
       this.isLoggedIn = true;
-      return true;
+      return this.isLoggedIn;
     }
     else {
       console.log("Token does not exist!");
       this.isLoggedIn = false;
-      return false;
+      return this.isLoggedIn;
     }
   }
 
